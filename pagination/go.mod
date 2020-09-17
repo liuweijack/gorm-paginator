@@ -1,4 +1,4 @@
-module github.com/biezhi/gorm-paginator/pagination
+module github.com/liuweijack/gorm-paginator/pagination
 
 require gorm.io/gorm v1.20.0
 
