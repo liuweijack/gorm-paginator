@@ -6,7 +6,7 @@ import (
 
 	"github.com/biezhi/gorm-paginator/pagination"
 	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 	_ "github.com/mattn/go-sqlite3"
 )
 

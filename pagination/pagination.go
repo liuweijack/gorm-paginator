@@ -3,7 +3,7 @@ package pagination
 import (
 	"math"
 
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // Param 分页参数
@@ -85,6 +85,10 @@ func Paging(p *Param, result interface{}) *Paginator {
 }
 
 func countRecords(db *gorm.DB, anyType interface{}, done chan bool, count *int) {
-	db.Model(anyType).Count(count)
+	var tmpCount *int64
+	db.Model(anyType).Count(tmpCount)
+	var tmpCount32 int
+	tmpCount32 = int(*tmpCount)
+	count = &tmpCount32
 	done <- true
 }
