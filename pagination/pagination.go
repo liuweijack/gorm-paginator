@@ -86,6 +86,7 @@ func Paging(p *Param, result interface{}) *Paginator {
 
 func countRecords(db *gorm.DB, anyType interface{}, done chan bool, count *int) {
 	var tmpCount *int64
+	tmpCount = new(int64)
 	db.Model(anyType).Count(tmpCount)
 	var tmpCount32 int
 	tmpCount32 = int(*tmpCount)
